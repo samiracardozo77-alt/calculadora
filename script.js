@@ -1,20 +1,20 @@
 const display = document.getElementById('display');
-const buttons = document.querySelectorA11('button');
+const buttons = document.querySelectorAll('button');
 
-buttons.forEach(btn=> {
+buttons.forEach(btn => {
     btn.addEventListener('click', () => handleInput(btn.innerText));
 });
 
 function handleInput(value) {
-    if (value === 'C'){
-        display.innerText = '0' ;
+    if (value === 'C') {
+        display.innerText = '0';
     } else if (value === '=') {
-        try{
+        try {
             display.innerText = eval(display.innerText
                 .replace('x', "*")
                 .replace('÷','/'));
             } catch {
-                display.innerText === 'Erro';
+              display.innerText === 'Erro';
             }
         }else{
             if(display.innerText === '0') {
